@@ -1,0 +1,174 @@
+/**************************************************************************************************************************************
+
+styles.css is written for the beautiful, responsive design of the Intractive Photo Gallery Project which works perfectly for the small screens from 320 pixels,
+medium screens from 768 pixels and large screens from 1024 pixels.
+
+
+****************************************************************************************************************************************/
+
+ * {
+	 box-sizing: border-box;
+   }
+body{
+	 margin:0;
+	 background: black;
+	}
+	
+/******************************* LOGO **********************************/
+#logo
+	{
+		color:#25aae1;
+		display: inline-block;
+		font-size:1.5em;
+		font-family: 'Norican', cursive;
+		margin-top: 40px;
+		line-height: 0.4em;
+		width: 120px;
+		text-shadow:0  0.5px #000080;
+	}
+.intr{display: inline;}
+	
+.ph
+	{
+		display: inline;
+		font-family:none;
+		font-size: 12px;
+		margin-left:40%;
+		color:#99b433;
+		font-weight: 800;
+		animation-name: example;
+		animation-duration:20s;
+		text-shadow: none;
+		position: relative;
+		z-index: 2;
+	}
+@keyframes example
+	{
+		0% {color:orangered;}
+		25% {color:mediumspringgreen;}
+		50% {color:deeppink;}
+		100% {color:yellowgreen;}
+	}
+.g
+	{	display: inline;
+		margin-left: 30%;
+	}
+
+/****************************** SEARCH BOX **********************************/
+.header
+	{
+		background: linear-gradient( to right, black,  transparent 95% ),
+					url("../img/background/img8.jpg") no-repeat center;
+		background-size: cover;
+		height: 170px;
+		width:100%;
+		display: block;
+		margin-top: -100px;
+		position: fixed;
+		z-index:1;
+		text-align: center;
+	}
+input[type="text"]
+	{
+		padding: 20px;
+		box-shadow: 0px 0px 0px 10px rgba(0,0,0,0.8); 
+		width: 100%;
+		margin-top: 20px;
+		opacity:0.8;
+	}
+
+input:focus
+	{
+		outline: none;
+		opacity:1;
+		
+	}
+::-webkit-input-placeholder	{font-style:italic;}
+[placeholder]:focus::-webkit-input-placeholder {color: transparent;}
+ul {list-style-type: none;}
+
+/******************************* GALLERY *************************************/
+.img-display
+	{
+		margin-top: 40px;
+		margin-right: 25px;
+		padding-bottom: 10px;
+		border: 5px solid black;
+		filter: grayscale(70%);
+		transition: 1s;
+	}
+.img-display:hover
+	{
+		filter: grayscale(0);
+		border-bottom: 3px solid #25aae1;
+		transition-timing-function: ease-in-out;
+		border-bottom-left-radius:20px;
+		border-bottom-right-radius:20px;
+	}
+.wrap-up,
+.container
+	{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: flex-start;
+		margin-top:80px;
+	}
+.wrap-up{min-height: calc(100vh - 40px);}
+
+/******************************* FOOTER *************************************/
+footer 
+	{
+		color: white;
+		text-align: center;
+		font-style: oblique;
+		font-size: 10px;
+	}
+footer p{padding: 20px;}
+
+/******************************************************************************
+				Media Query for medium screens for e.g ipads
+/*****************************************************************************/
+
+@media(min-width:768px){
+#logo{
+		margin-left: 5%;
+		width: 150px;
+		margin-top: 100px;
+		
+	}
+.header
+	{
+		text-align: left;
+		height: 200px;
+	}
+	
+.wrap-up
+	{
+		width: 780px;
+		margin: 0 auto;
+		margin-top: 50px;
+	}
+input[type="text"]{
+		width:60%;
+		margin-left: 2%;
+		margin-top: -15px;
+	}
+}
+/******************************************************************************
+					Media query for large screens
+/*****************************************************************************/
+@media(min-width:1024px){
+#logo{margin-left: 15%;	}
+.wrap-up
+	{
+		width: 1200px;
+		margin: 0 auto;
+		margin-top:50px;
+	}
+input[type="text"]
+	{
+		width:40%;
+		margin-left: 7%;
+	}
+}
